@@ -27,7 +27,6 @@ import java.util.HashMap;
 
 public class HTTPRequests {
 
-
     int id;   //is a global  variable we created
 
 

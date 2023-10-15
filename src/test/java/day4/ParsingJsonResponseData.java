@@ -4,19 +4,18 @@ import io.restassured.http.ContentType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import  io.restassured.response.Response;
-import static org.hamcrest.Matchers.*;
 import org.json.JSONObject;
 import static io.restassured.RestAssured.*;
 
 
-public class ParsingJsonresponseData {
+public class ParsingJsonResponseData {
 
     @Test(priority=1)
     void testJsonResponse()
     {
 
 		/*
-		//Aproach1
+//Aproach 1
 		//VALIDATING JSON RESPONSE USING MATCHERS
 
 		given()
@@ -31,7 +30,7 @@ public class ParsingJsonresponseData {
 			.body("book[5].title", equalTo("sell my pen here"));    // Gather JSON response in POSTMAN for same URL. Open a wab "JSON pathfinder" to find path of specific field "book[5].title"
 		*/// use equalTo method to match to a JSON path to a value of a specific field on JSON
 
-        //Aproach2
+//Aproach 2
         // VALIDATING JSON RESPONSE USING ASSERTIONS (Without using `Then()`)
 
         Response res= given()                               //Storing response into variable
@@ -51,7 +50,7 @@ public class ParsingJsonresponseData {
     void testJsonResponseData()
     {
 
-        //  Aproach 3
+//  Aproach 3
         //  Converting JSON response into JSONObject
 
         Response res= given()

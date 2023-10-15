@@ -35,13 +35,13 @@ public class HTTPRequests {
 
         given()
 
-                .when()
+        .when()
                 .get("https://reqres.in/api/users?page=2")
 
-                .then()
-                    .statusCode(200)                // validate status code
+        .then()
+                .statusCode(200)                // validate status code
                 .body("page",equalTo(2))    //we need to check whichever page ID we have passed in the response
-                     .log().all();                      // this will display the entire response in the console window
+                .log().all();                      // this will display the entire response in the console window
 
 
     }
@@ -57,7 +57,7 @@ public class HTTPRequests {
                 .contentType("application/json")
                 .body(data)
 
-                .when()
+        .when()
                 .post("https://reqres.in/api/users")
                 .jsonPath().getInt("id");
         // once you send this post request I don't  want to do any validations here but I want to
@@ -84,12 +84,10 @@ public class HTTPRequests {
                 .contentType("application/json")
                 .body(data)
 
-                .when()
+        .when()
                 .post("https://reqres.in/api/users/"+id)            //but here we have to pass ID of the user
 
-
-
-                .then()
+        .then()
                 .statusCode(201)
                 .log().all();
 
@@ -100,10 +98,10 @@ public class HTTPRequests {
     {
         given()
 
-                .when()
+        .when()
                 .delete("https://reqres.in/api/users/"+id) // so whatever ID we used for creation and updation, the same ID I am using here for deletion
 
-                .then()
+        .then()
                 .statusCode(204)
                 .log().all();
 
